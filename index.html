@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Chain | Specialized Jobs & Housing for Hawaiʻi Graduates</title>
+  <style>
+    /* CSS RESET & DESIGN SYSTEM (Warm Hawai'i Beach & Golden Hour Palette) */
+    :root {
+      --deep-ocean: #023E4A;
+      --navy-brand: #0B3C5D;
+      --teal-wave: #087F8C;
+      --seafoam: #80C4B7;
+      --coral-sun: #FF6F59;
+      --mango-gold: #F4A261;
+      --golden-sand: #E7C169;
+      --sand-bg: #FAF4E8;
+      --sand-card: #FFFDF9;
+      --white: #FFFFFF;
+      --text-dark: #2B2D42;
+      --text-muted: #5C677D;
+      --border-light: #EAD9B8;
+      --radius: 14px;
+      --shadow: 0 12px 28px -5px rgba(211, 108, 48, 0.12);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--sand-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3 {
+      line-height: 1.25;
+      color: var(--deep-ocean);
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* HEADER & BRANDING */
+    header {
+      background-color: var(--sand-card);
+      border-bottom: 3px solid var(--mango-gold);
+      padding: 0.6rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(224, 130, 68, 0.08);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 46px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* TOP CTA BUTTON */
+    .btn-top-cta {
+      background-color: var(--coral-sun);
+      color: var(--white);
+      font-weight: 800;
+      padding: 0.7rem 1.4rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(255, 111, 89, 0.35);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+    }
+
+    .btn-top-cta:hover, .btn-top-cta:focus {
+      background-color: #E85A44;
+      transform: translateY(-1px);
+    }
+
+    /* SECTION STYLES */
+    section {
+      padding: 4rem 0;
+      position: relative;
+    }
+
+    /* PHOTO DISPLAY CARDS */
+    .photo-card {
+      background: var(--sand-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-light);
+      margin-top: 1.5rem;
+    }
+
+    .photo-wrapper {
+      width: 100%;
+      position: relative;
+      background-color: #F5E8D3;
+      overflow: hidden;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      padding: 1rem 1.2rem;
+      background: var(--sand-card);
+      font-size: 0.95rem;
+      color: var(--deep-ocean);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-top: 2px solid #F3E5CB;
+    }
+
+    /* SECTION 1: HERO */
+    .hero {
+      background: linear-gradient(180deg, #FFFBF5 0%, var(--sand-bg) 100%);
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-brand-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-logo-img {
+      max-height: 90px;
+      width: auto;
+      max-width: 280px;
+      object-fit: contain;
+    }
+
+    .hero-one-liner {
+      max-width: 820px;
+      margin: 0 auto 1.5rem auto;
+      color: var(--deep-ocean);
+    }
+
+    .hero-subtext {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--teal-wave);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-photo-banner {
+      margin-top: 2.5rem;
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* SECTION 2: THE PROBLEM */
+    .problem-section {
+      background-color: #FFF2EC;
+      border-top: 2px solid #FFE2D1;
+      border-bottom: 2px solid #FFE2D1;
+    }
+
+    .problem-card {
+      background: var(--sand-card);
+      border-left: 6px solid var(--coral-sun);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .quote-box {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #B23B28;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .real-cost {
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* SECTION 3: HOW IT WORKS & PRICE (CENTERED 2-COLUMN ROWS) */
+    .how-it-works-section {
+      background-color: var(--sand-card);
+      text-align: center;
+    }
+
+    .how-it-works-section h2,
+    .how-it-works-section p {
+      text-align: center;
+    }
+
+    .price-banner {
+      background: linear-gradient(135deg, var(--deep-ocean) 0%, var(--teal-wave) 100%);
+      color: var(--white);
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 20px rgba(2, 62, 74, 0.15);
+    }
+
+    .price-banner h3 {
+      color: var(--mango-gold);
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .price-banner p {
+      color: #E6F7F9;
+      margin-bottom: 0;
+    }
+
+    /* Grid configured for 2 items per row, centered */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 380px));
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background-color: var(--sand-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .step-photo {
+      height: 160px;
+      width: 100%;
+      background: #F3E6D0;
+      overflow: hidden;
+    }
+
+    .step-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .step-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .step-number {
+      display: inline-block;
+      background: var(--coral-sun);
+      color: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    /* SECTION 4: PROOF */
+    .proof-section {
+      background: #EAF5EF;
+      border-top: 2px solid #C8E8D7;
+      border-bottom: 2px solid #C8E8D7;
+      text-align: center;
+    }
+
+    .proof-stat-box {
+      background: var(--sand-card);
+      padding: 2.5rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .big-number {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--teal-wave);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* SECTION 5: OBJECTIONS & GUARANTEE */
+    .objections-section {
+      background-color: var(--sand-card);
+    }
+
+    .objection-card {
+      background: var(--sand-bg);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .objection-card h3 {
+      color: #D95338;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .guarantee-box {
+      background: #FFF7E6;
+      border: 2px dashed var(--mango-gold);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .guarantee-title {
+      color: #A05206;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    /* SECTION 6: SIGN UP CTA & EMBEDDED FORM */
+    .cta-section {
+      background: linear-gradient(135deg, var(--deep-ocean) 0%, #06505D 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 4.5rem 0;
+    }
+
+    .cta-section h2 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: #E6F7F9;
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 1.15rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background-color: var(--coral-sun);
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 800;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(255, 111, 89, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      width: 100%;
+      max-width: 420px;
+      min-height: 48px;
+    }
+
+    .btn-cta:hover, .btn-cta:focus {
+      background-color: #E85A44;
+      transform: translateY(-2px);
+      outline: 3px solid var(--mango-gold);
+    }
+
+    .cta-followup-text {
+      font-size: 0.95rem;
+      color: #E6F7F9;
+      margin-top: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Embedded Google Form Container */
+    .form-wrapper {
+      width: 100%;
+      max-width: 680px;
+      margin: 2rem auto 0 auto;
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      padding: 10px 0;
+    }
+
+    .google-form-iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 820px;
+      border: 0;
+      display: block;
+    }
+
+    footer {
+      background: var(--deep-ocean);
+      color: #A0B2C6;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 600px) {
+      section {
+        padding: 2.5rem 0;
+      }
+      .brand-logo-img {
+        height: 38px;
+      }
+      .btn-top-cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      .btn-cta {
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .google-form-iframe {
+        height: 880px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVIGATION -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo-brand">
+        <!-- Exact uploaded logo image -->
+        <img 
+          src="brain-chain-logo.png" 
+          alt="Brain Chain Logo" 
+          class="brand-logo-img"
+        >
+      </a>
+      <!-- Top Button (1 of 2 buttons on page) -->
+      <a href="#signup" class="btn-top-cta">I'm Interested!</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. BIG HEADLINE & HOW IT WORKS -->
+    <section class="hero">
+      <div class="container">
+        
+        <!-- Hero Logo Image -->
+        <div class="hero-brand-display">
+          <img 
+            src="brain-chain-logo.png" 
+            alt="Brain Chain Logo" 
+            class="hero-logo-img"
+          >
+        </div>
+
+        <h1 class="hero-one-liner">
+          Brain Chain is a job board that helps Hawai'i-born college graduates find local jobs.
+        </h1>
+        <p class="hero-subtext">
+          We match you with hand-picked local university jobs paired directly with affordable housing, so you can come back home effortlessly.
+        </p>
+
+        <!-- PHOTO 1: Hawai'i Island Coastline & Campus Setting -->
+        <div class="photo-card hero-photo-banner">
+          <div class="photo-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1000&q=80" 
+              alt="Lush green mountains and tropical coastline of Oʻahu, Hawaiʻi"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'300\' fill=\'%23023E4A\'><rect width=\'100%\' height=\'100%\' fill=\'%23087F8C\'/><text x=\'50%\' y=\'50%\' fill=\'%23FFFFFF\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🌴 Hawaiʻi University Campus &amp; Subsidized Housing</text></svg>'"
+            >
+          </div>
+          <div class="photo-caption">
+            🌴 <span>Hawaiʻi Island Life: Return home to specialized university department roles paired with affordable housing.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. THE PROBLEM (CUSTOMER'S WORDS & REAL COST) -->
+    <section class="problem-section">
+      <div class="container">
+        <div class="problem-card">
+          <h2>Why Staying Away or Coming Home Feels Impossible</h2>
+          <div class="quote-box">
+            "I'm stuck in a hamster wheel of service jobs, paycheck to paycheck living."
+          </div>
+          <p class="real-cost">
+            Here is what this is costing you right now: You spent four or more years earning your university degree, but watching your monthly bank balance hit $0 while pulling shifts that don't use your education forces an unfair choice—stay stranded on the mainland away from family, or move back home only to struggle with rent.
+          </p>
+
+          <!-- PHOTO 2: Mainland Service Job Grind -->
+          <div class="photo-card" style="margin-top: 1.5rem;">
+            <div class="photo-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" 
+                alt="Young person pulling long hours in a non-specialized service environment"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'250\' fill=\'%23B23B28\'><rect width=\'100%\' height=\'100%\' fill=\'%23FFF2EC\'/><text x=\'50%\' y=\'50%\' fill=\'%23B23B28\' font-size=\'18\' text-anchor=\'middle\' font-family=\'sans-serif\'>⚠️ Stuck in service shifts instead of your university degree</text></svg>'"
+              >
+            </div>
+            <div class="photo-caption">
+              ⚠️ <span>The Grind: Working service shifts that don't use your degree? Brain Chain connects you to career-track campus roles back home.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WHAT THEY GET AND WHAT IT COSTS (3-5 STEPS + REAL PRICE) -->
+    <section class="how-it-works-section">
+      <div class="container">
+        <h2>How Brain Chain Works</h2>
+        <p>Simple, zero-stress job and housing placement in 4 clear steps:</p>
+
+        <div class="price-banner">
+          <h3>Cost: $0 (100% Free for Applicants)</h3>
+          <p>Using Brain Chain to get matched is completely free. Subsidized rent prices depend on your final job placement.</p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- STEP 1 CARD WITH PHOTO -->
+          <div class="step-card">
+            <div class="step-photo">
+              <img 
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=80" 
+                alt="Hawai'i graduate filling out their career application profile"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="step-content">
+              <span class="step-number">1</span>
+              <h3>Submit Your Profile</h3>
+              <p>Tell us your degree, work background, and preferred island location in under two minutes.</p>
+            </div>
+          </div>
+
+          <!-- STEP 2 CARD WITH PHOTO (Uploaded UH Mānoa Campus Photo) -->
+          <div class="step-card">
+            <div class="step-photo">
+              <img 
+                src="uhm photo.jpeg" 
+                alt="University of Hawaiʻi at Mānoa campus aerial view showing Stan Sheriff Center and Koolau mountains"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80';"
+              >
+            </div>
+            <div class="step-content">
+              <span class="step-number">2</span>
+              <h3>Get Hand-Picked Matches</h3>
+              <p>We work directly with local university departments like UH Mānoa to secure job openings matched to your skills.</p>
+            </div>
+          </div>
+
+          <!-- STEP 3 CARD WITH PHOTO (Realistic Hawai'i Home) -->
+          <div class="step-card">
+            <div class="step-photo">
+              <img 
+                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=500&q=80" 
+                alt="Realistic single-family Hawaiʻi house and island neighborhood home"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="step-content">
+              <span class="step-number">3</span>
+              <h3>Lock In Housing</h3>
+              <p>Your job offer comes paired with subsidized housing options so you don't have to search Zillow.</p>
+            </div>
+          </div>
+
+          <!-- STEP 4 CARD WITH PHOTO (Family & Friends Reunited in Hawai'i) -->
+          <div class="step-card">
+            <div class="step-photo">
+              <img 
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80" 
+                alt="Family and friends reunited together outdoors in Hawaiʻi"
+                onerror="this.style.display='none'"
+              >
+            </div>
+            <div class="step-content">
+              <span class="step-number">4</span>
+              <h3>Move Back Home</h3>
+              <p>Return to family, friends, and local community with a stable salary and a safe place to live.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROOF -->
+    <section class="proof-section">
+      <div class="container">
+        <div class="proof-stat-box">
+          <div class="big-number">12,000+</div>
+          <h2>Hawaiʻi-Born Graduates Deal With This Exact Problem</h2>
+          <p>
+            Every single year, thousands of local students leave for college or take non-specialized work simply because finding both a career-track job and local housing feels impossible. You are not alone in this fight, and Brain Chain exists to solve this exact bottleneck.
+          </p>
+
+          <!-- PHOTO 3: Family and Friends Gathering ('Ohana) in Hawai'i -->
+          <div class="photo-card" style="margin-top: 2rem;">
+            <div class="photo-wrapper">
+              <img 
+                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80" 
+                alt="Local family and friends gathered together outdoors for a celebration in Hawaiʻi"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'250\' fill=\'%23087F8C\'><rect width=\'100%\' height=\'100%\' fill=\'%23EAF5EF\'/><text x=\'50%\' y=\'50%\' fill=\'%23087F8C\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🌺 Reconnecting 12,000+ Island Graduates with Community &amp; Family</text></svg>'"
+              >
+            </div>
+            <div class="photo-caption">
+              🤝 <span>Community ('Ohana): Reconnecting local university graduates back to island family, friends, and lifestyle.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TWO REAL OBJECTIONS & GUARANTEE -->
+    <section class="objections-section">
+      <div class="container">
+        <h2>Common Questions</h2>
+
+        <div class="objection-card">
+          <h3>Is using this website really 100% free?</h3>
+          <p>
+            Yes. Job seekers pay zero dollars to use Brain Chain, submit applications, or receive matches. We partner directly with local institutions and university departments to fund our platform. You only pay for your standard rent once you accept a placement.
+          </p>
+        </div>
+
+        <div class="objection-card">
+          <h3>Will this actually work for me?</h3>
+          <p>
+            We focus exclusively on local graduates and local university department matches, keeping our pool small and high quality.
+          </p>
+          
+          <div class="guarantee-box">
+            <div class="guarantee-title">OUR 30-DAY GUARANTEE:</div>
+            <p style="margin-bottom: 0; color: #7A3B03;">
+              If you do not get 3 local university job matches in 30 days, I will personally reach out to 10 more campus departments for you within a week.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SIGN-UP SECTION WITH EMBEDDED FORM -->
+    <section class="cta-section" id="signup">
+      <div class="container">
+        <h2>Ready to Find Your Job and Housing Back Home?</h2>
+        <p>Get in touch with us today to start receiving hand-picked university job matches paired with affordable local housing.</p>
+
+        <!-- PHOTO 4: Realistic Local Neighborhood House in Honolulu, Hawai'i -->
+        <div class="photo-card" style="max-width: 650px; margin: 0 auto 2rem auto; border: none;">
+          <div class="photo-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1598135753163-6167c1a1ad65?auto=format&fit=crop&w=800&q=80" 
+              alt="Realistic local residential home in a Honolulu, Hawaiʻi neighborhood"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'650\' height=\'250\' fill=\'%23023E4A\'><rect width=\'100%\' height=\'100%\' fill=\'%23F4A261\'/><text x=\'50%\' y=\'50%\' fill=\'%23023E4A\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🏡 Subsidized Housing Paired with Your Job</text></svg> me'"
+            >
+          </div>
+          <div class="photo-caption" style="justify-content: center; background: #FFFDF9; color: var(--deep-ocean);">
+            🏡 <span>Subsidized Housing: Affordable homes in Hawaiʻi neighborhoods paired directly with your university job match.</span>
+          </div>
+        </div>
+
+        <!-- Bottom Button (Smooth scroll to embedded form) -->
+        <a href="#signup-form" class="btn-cta" id="mainCtaBtn">
+          Get in touch
+        </a>
+
+        <!-- Explanation line: what happens after clicking and response speed -->
+        <p class="cta-followup-text">
+          Fill out the quick interest form below. Our team personally reviews every profile and responds within 24 hours.
+        </p>
+
+        <!-- Embedded Google Form Container -->
+        <div class="form-wrapper" id="signup-form">
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeUY0z1OVnv4257eDWP_NGp6XQezT5zSwVXV1slSbxrKxonAQ/viewform?embedded=true" 
+            class="google-form-iframe"
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">Loading…</iframe>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Brain Chain. Helping Hawaiʻi graduates return home.</p>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVITY & CONSOLE LOG DEBUGGING -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Brain Chain landing page initialized with embedded Google Form.');
+
+      const ctaBtn = document.getElementById('mainCtaBtn');
+
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', function() {
+          console.log('User clicked Get in Touch to scroll down to the embedded Google Form.');
+        });
+      } else {
+        console.error('Error: CTA Button #mainCtaBtn was not found in the DOM.');
+      }
+    });
+  </script>
+</body>
+</html>
