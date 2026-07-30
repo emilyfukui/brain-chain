@@ -97,11 +97,12 @@
     }
 
     .brand-logo-img {
-      height: 46px;
+      height: 48px;
       width: auto;
       max-width: 220px;
       object-fit: contain;
       display: block;
+      border-radius: 6px;
     }
 
     /* TOP CTA BUTTON */
@@ -181,14 +182,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
     }
 
     .hero-logo-img {
-      max-height: 90px;
+      max-height: 180px;
       width: auto;
       max-width: 280px;
       object-fit: contain;
+      border-radius: 12px;
     }
 
     .hero-one-liner {
@@ -351,12 +353,12 @@
       margin: 0 auto;
     }
 
-    .big-number {
-      font-size: 3.5rem;
-      font-weight: 900;
+    .proof-subtext {
+      font-size: 1.15rem;
+      font-weight: 600;
       color: var(--teal-wave);
-      line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-top: -0.2rem;
+      margin-bottom: 1.2rem;
     }
 
     /* SECTION 5: OBJECTIONS & GUARANTEE */
@@ -502,11 +504,12 @@
   <header>
     <div class="container nav-wrapper">
       <a href="#" class="logo-brand">
-        <!-- Exact uploaded logo image -->
+        <!-- Exact uploaded logo file image -->
         <img 
           src="brain-chain-logo.png" 
           alt="Brain Chain Logo" 
           class="brand-logo-img"
+          onerror="this.onerror=null; this.src='brain-chain-logo.jpg';"
         >
       </a>
       <!-- Top Button (1 of 2 buttons on page) -->
@@ -525,6 +528,7 @@
             src="brain-chain-logo.png" 
             alt="Brain Chain Logo" 
             class="hero-logo-img"
+            onerror="this.onerror=null; this.src='brain-chain-logo.jpg';"
           >
         </div>
 
@@ -557,10 +561,10 @@
         <div class="problem-card">
           <h2>Why Staying Away or Coming Home Feels Impossible</h2>
           <div class="quote-box">
-            "I'm stuck in a hamster wheel of service jobs, paycheck to paycheck living."
+            "Every option I find either requires taking a massive pay cut or moving back in with my parents, so I just end up quitting the search."
           </div>
           <p class="real-cost">
-            Here is what this is costing you right now: You spent four or more years earning your university degree, but watching your monthly bank balance hit $0 while pulling shifts that don't use your education forces an unfair choice—stay stranded on the mainland away from family, or move back home only to struggle with rent.
+            "I spent hours scrolling through job boards last night looking for anything relevant in Honolulu, but everything specialized pays peanuts compared to what rent actually costs back home."
           </p>
 
           <!-- PHOTO 2: Mainland Service Job Grind -->
@@ -663,8 +667,10 @@
     <section class="proof-section">
       <div class="container">
         <div class="proof-stat-box">
-          <div class="big-number">12,000+</div>
-          <h2>Hawaiʻi-Born Graduates Deal With This Exact Problem</h2>
+          <h2>Built for Hawaiʻi-Born Graduates Looking to Return Home</h2>
+          <p class="proof-subtext">
+            Currently matching our first cohort of Hawaiʻi graduates with campus department roles.
+          </p>
           <p>
             Every single year, thousands of local students leave for college or take non-specialized work simply because finding both a career-track job and local housing feels impossible. You are not alone in this fight, and Brain Chain exists to solve this exact bottleneck.
           </p>
@@ -675,7 +681,7 @@
               <img 
                 src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80" 
                 alt="Local family and friends gathered together outdoors for a celebration in Hawaiʻi"
-                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'250\' fill=\'%23087F8C\'><rect width=\'100%\' height=\'100%\' fill=\'%23EAF5EF\'/><text x=\'50%\' y=\'50%\' fill=\'%23087F8C\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🌺 Reconnecting 12,000+ Island Graduates with Community &amp; Family</text></svg>'"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'250\' fill=\'%23087F8C\'><rect width=\'100%\' height=\'100%\' fill=\'%23EAF5EF\'/><text x=\'50%\' y=\'50%\' fill=\'%23087F8C\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🌺 Reconnecting Island Graduates with Community &amp; Family</text></svg>'"
               >
             </div>
             <div class="photo-caption">
@@ -692,16 +698,16 @@
         <h2>Common Questions</h2>
 
         <div class="objection-card">
-          <h3>Is using this website really 100% free?</h3>
+          <h3>Will my job choices be super limited?</h3>
           <p>
-            Yes. Job seekers pay zero dollars to use Brain Chain, submit applications, or receive matches. We partner directly with local institutions and university departments to fund our platform. You only pay for your standard rent once you accept a placement.
+            No. We partner directly with multiple departments, research labs, administrative offices, and institutional units across the Hawaiʻi university system. Whether your degree is in STEM, business, education, communications, or healthcare, we match you directly with specialized, career-track positions tailored to your actual background—not generic entry-level work.
           </p>
         </div>
 
         <div class="objection-card">
-          <h3>Will this actually work for me?</h3>
+          <h3>Is the housing just a tiny, cramped dorm room?</h3>
           <p>
-            We focus exclusively on local graduates and local university department matches, keeping our pool small and high quality.
+            Not at all. You won't be crammed into a freshman dorm. We connect you with real, private apartment units and residential housing options near campus that are clean, safe, and subsidized specifically to stay comfortable and affordable on your local starting salary.
           </p>
           
           <div class="guarantee-box">
@@ -726,7 +732,7 @@
             <img 
               src="https://images.unsplash.com/photo-1598135753163-6167c1a1ad65?auto=format&fit=crop&w=800&q=80" 
               alt="Realistic local residential home in a Honolulu, Hawaiʻi neighborhood"
-              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'650\' height=\'250\' fill=\'%23023E4A\'><rect width=\'100%\' height=\'100%\' fill=\'%23F4A261\'/><text x=\'50%\' y=\'50%\' fill=\'%23023E4A\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🏡 Subsidized Housing Paired with Your Job</text></svg> me'"
+              onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'650\' height=\'250\' fill=\'%23023E4A\'><rect width=\'100%\' height=\'100%\' fill=\'%23F4A261\'/><text x=\'50%\' y=\'50%\' fill=\'%23023E4A\' font-size=\'20\' text-anchor=\'middle\' font-family=\'sans-serif\'>🏡 Subsidized Housing Paired with Your Job</text></svg>'"
             >
           </div>
           <div class="photo-caption" style="justify-content: center; background: #FFFDF9; color: var(--deep-ocean);">
@@ -736,7 +742,7 @@
 
         <!-- Bottom Button (Smooth scroll to embedded form) -->
         <a href="#signup-form" class="btn-cta" id="mainCtaBtn">
-          Get in touch
+          Get My 3 Job Matches
         </a>
 
         <!-- Explanation line: what happens after clicking and response speed -->
@@ -767,13 +773,13 @@
   <!-- INTERACTIVITY & CONSOLE LOG DEBUGGING -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      console.log('Brain Chain landing page initialized with embedded Google Form.');
+      console.log('Brain Chain landing page initialized.');
 
       const ctaBtn = document.getElementById('mainCtaBtn');
 
       if (ctaBtn) {
         ctaBtn.addEventListener('click', function() {
-          console.log('User clicked Get in Touch to scroll down to the embedded Google Form.');
+          console.log('User clicked Get My 3 Job Matches to scroll down to the embedded Google Form.');
         });
       } else {
         console.error('Error: CTA Button #mainCtaBtn was not found in the DOM.');
